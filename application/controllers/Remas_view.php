@@ -37,7 +37,8 @@ class Remas_view extends CI_Controller {
 		}
 		
 		$this->load->view('header_admin');
-		$this->load->view('anggota_ajax_admin');		
+		$data['anggota'] = $this->db->get('anggota')->result();
+		$this->load->view('anggota_ajax_admin',$data);		
 	}
 
 	public function userAnggota()
@@ -116,11 +117,18 @@ class Remas_view extends CI_Controller {
 		$this->load->view('anggota_ajax');
 	}
 
+	public function Anggota()
+	{
+		$this->load->view('header_anggota'); 
+		$this->load->view('anggota_ajax');
+		$this->load->view('boot');
+
+	}
 
 	public function tambahAnggota()
 	{
 		$this->load->view('boot');
-		$this->load->view('tambah_remas');
+		$this->load->view('tambah_anggota');
 	}
 
 	public function pengumumanAdmin()

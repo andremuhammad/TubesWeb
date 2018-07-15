@@ -29,8 +29,12 @@ class loginAdmin extends CI_Controller {
 			$this->load->view('login_admin');
 		} else 
 		{
+			if ($this->session->userdata('logged_in')['level'] != 'admin') {
+				redirect('Remas_view/pengumumanAnggota','refresh');
+			}else{
+				redirect('Remas_view/userAdmin','refresh');
+			}
 			
-			redirect('Remas_view/userAdmin','refresh');
 		}
 	}
 
@@ -44,7 +48,11 @@ class loginAdmin extends CI_Controller {
 			$sess_array=array();
 			foreach ($result as $row ) 
 			{
-				$sess_array=array('no'=>$row->no,'username'=>$row->username);
+				$sess_array=array(
+					'id'=>$row->id,
+					'username'=>$row->username,
+					'level'=>$row->level
+				);
 				$this->session->set_userdata('logged_in',$sess_array);
 			}
 			return true;
@@ -63,6 +71,24 @@ class loginAdmin extends CI_Controller {
 		redirect('loginAdmin','refresh');
 	}
 
+	public function register()
+	{
+				$this->load->helper('url','form');
+			$this->load->library('form_validation');
+			$this->form_validation->set_rules('username', 'username', 'required');
+			$this->form_validation->set_rules('password', 'password', 'required');
+			if ($this->form_validation->run()==false) 
+			{
+				$this->load->view('tambah_user');		
+			}
+			else
+			{
+				$set = $this->input->post();
+				$set['level'] = "user";
+				$this->db->insert('user',$set);
+				redirect('loginAdmin','refresh');
+			}
+	}
 	public function create()
 	{
 			$this->load->helper('url','form');
