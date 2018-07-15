@@ -119,6 +119,12 @@ public function getAnggota($no)
 		$this->db->delete('anggota');
 	}
 
+	public function deletePengumuman($no)
+	{
+		$this->db->where('no',$no);
+		$this->db->delete('pengumuman');
+	}
+
 	public function deleteArtikel($no)
 	{
 		$this->db->where('no',$no);

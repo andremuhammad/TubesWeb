@@ -11,8 +11,8 @@ class userAdmin extends CI_Model {
 
 	public function loginAdmin($username,$password)
 	{
-		$this->db->select('no,username,password');
-		$this->db->from('admin');
+		$this->db->select('id,username,password,level');
+		$this->db->from('user');
 		$this->db->where('username', $username);
 		$this->db->where('password',$password);
 		$query=$this->db->get();
