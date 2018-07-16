@@ -18,7 +18,6 @@
 		        <div class="container">
 		            <div class="row">
 		                <div class="col-lg-12 col-sm-7 ">
-		                    <!--hr class="section-heading-spacer"-->
 		                    <div class="clearfix"></div>
 		                    <p class="lead"><?php echo $key->artikel ?></p>
 		                </div>

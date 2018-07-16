@@ -4,7 +4,7 @@
          <center><h3><font color="white">Selamat Datang di Website Remaja Masjid Al-Akbar Surabaya</h3></center></font>
          <hr />
         <div class="overlay">
-            <!--div class="container row pad-top"-->
+        
             <br><br>
             <div id="tentang">
                 <font color=white><h3> Sejarah Remaja Masjid Al-Akbar Surabaya</h3>
@@ -26,20 +26,6 @@
                     <font color=white><h3>Struktur Organisasi Remaja Masjid Al-Akbar Surabaya</h3>
                         <div style="background-color:black;padding:25px;">
                             <img src="<?php echo base_url();?>images/remas.png" width=100% height=25%/>
-                <!--div class="row">
-                    <div class="col-lg-6 col-sm-6 scrollclass" align="left">
-                        <h1>
-                            <strong>Remas Al Muttaqien</strong>
-                        </h1>
-                        <p class="lead" align="justify">
-                            <b>Merupakan organisasi remaja masjid dibawah naungan takmir masjid al muttaqien.remas sendiri bertujuan untuk menampung remaja disekitar masjid terutama desa tambak rigadung agar memusatkan kegiatan mereka di masjid terutama dalam bidang agama. </b>
-                        </p>
-                    </div>
-
-                    <div class="col-lg-4 col-lg-offset-2 col-sm-6 scrollclass" align="right">
-                            <img class="img-responsive" src="<?php echo base_url();?>images/remas.jpg" alt="">
-                    </div>
-                </div-->
             </div>
             </div>
         </div>
